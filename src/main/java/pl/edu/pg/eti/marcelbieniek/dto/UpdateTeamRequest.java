@@ -21,7 +21,7 @@ public class UpdateTeamRequest {
 
     public static BiFunction<Team, UpdateTeamRequest, Team> dtoToEntityUpdater() {
         return (team, request) -> {
-            team.setName(request.getName());
+            //team.setName(request.getName());
             team.setWins(request.getWins());
             team.setChampionships(request.getChampionships());
             return team;

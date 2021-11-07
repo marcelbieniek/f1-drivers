@@ -2,6 +2,8 @@ package pl.edu.pg.eti.marcelbieniek.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import pl.edu.pg.eti.marcelbieniek.entity.Driver;
 import pl.edu.pg.eti.marcelbieniek.entity.Team;
 import pl.edu.pg.eti.marcelbieniek.repository.TeamRepository;
 
@@ -19,14 +21,25 @@ public class TeamService {
     }
 
     public Optional<Team> find(String name) {
-        return repository.find(name);
+        return repository.findById(name);
     }
 
     public List<Team> findAll() {
         return repository.findAll();
     }
 
-    public void create(Team team) {
-        repository.create(team);
+    @Transactional
+    public Team create(Team team) {
+        return repository.save(team);
+    }
+
+    @Transactional
+    public void update(Team team) {
+        repository.save(team);
+    }
+
+    @Transactional
+    public void delete(String team) {
+        repository.deleteById(team);
     }
 }

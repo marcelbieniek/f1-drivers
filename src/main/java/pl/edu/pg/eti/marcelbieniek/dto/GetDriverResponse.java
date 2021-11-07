@@ -16,7 +16,6 @@ public class GetDriverResponse {
 
     private Long id;
     private String name;
-    private String team;
     private int wins;
     private int championships;
 
@@ -24,7 +23,6 @@ public class GetDriverResponse {
         return driver -> GetDriverResponse.builder()
                 .id(driver.getId())
                 .name(driver.getName())
-                .team(driver.getTeam().getName())
                 .wins(driver.getWins())
                 .championships(driver.getChampionships())
                 .build();
