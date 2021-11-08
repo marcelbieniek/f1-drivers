@@ -22,8 +22,7 @@ Content-Type: application/json
   "wins": 1,
   "championships": 0
 }
-### czy to oznacza ze przez driverController nie mozna ustawic teamu drivera? Nigdzie? w sensie nie da sie zrobic
-### drivera z teamem? ani zupdatowac zeby mial team?
+###
 
 DELETE http://localhost:8080/api/drivers/5
 ###

@@ -36,7 +36,7 @@ public class CommandLine implements CommandLineRunner {
                 case "help" -> System.out.println("Available commands: help | teams | drivers | add | delete | quit");
                 case "teams" -> teamService.findAll().forEach(System.out::println);
                 case "drivers" -> driverService.findAll().forEach(System.out::println);
-                case "add" -> add();
+                case "add" -> addDriver();
                 case "delete" -> deleteDriver();
                 default -> {
                     System.out.println("Could not recognise command!");
