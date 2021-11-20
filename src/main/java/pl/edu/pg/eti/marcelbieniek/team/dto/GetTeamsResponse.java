@@ -1,8 +1,6 @@
-package pl.edu.pg.eti.marcelbieniek.dto;
+package pl.edu.pg.eti.marcelbieniek.team.dto;
 
 import lombok.*;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,7 +30,7 @@ public class GetTeamsResponse {
     @Singular
     private List<Team> teams;
 
-    public static Function<Collection<pl.edu.pg.eti.marcelbieniek.entity.Team>, GetTeamsResponse> entityToDtoMapper() {
+    public static Function<Collection<pl.edu.pg.eti.marcelbieniek.team.entity.Team>, GetTeamsResponse> entityToDtoMapper() {
         return teams -> {
             GetTeamsResponse.GetTeamsResponseBuilder response = GetTeamsResponse.builder();
 

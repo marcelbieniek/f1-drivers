@@ -1,14 +1,15 @@
-package pl.edu.pg.eti.marcelbieniek.controllers;
+package pl.edu.pg.eti.marcelbieniek.team.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import pl.edu.pg.eti.marcelbieniek.dto.*;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
-import pl.edu.pg.eti.marcelbieniek.service.DriverService;
-import pl.edu.pg.eti.marcelbieniek.service.TeamService;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.team.service.TeamService;
+import pl.edu.pg.eti.marcelbieniek.team.dto.CreateTeamRequest;
+import pl.edu.pg.eti.marcelbieniek.team.dto.GetTeamResponse;
+import pl.edu.pg.eti.marcelbieniek.team.dto.GetTeamsResponse;
+import pl.edu.pg.eti.marcelbieniek.team.dto.UpdateTeamRequest;
 
 import java.util.Collection;
 import java.util.List;

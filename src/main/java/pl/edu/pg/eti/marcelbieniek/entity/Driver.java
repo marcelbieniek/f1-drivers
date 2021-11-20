@@ -2,6 +2,7 @@ package pl.edu.pg.eti.marcelbieniek.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 
 import javax.persistence.*;
 import java.io.Serializable;

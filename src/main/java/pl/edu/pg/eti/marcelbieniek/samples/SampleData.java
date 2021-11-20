@@ -4,9 +4,9 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 import pl.edu.pg.eti.marcelbieniek.service.DriverService;
-import pl.edu.pg.eti.marcelbieniek.service.TeamService;
+import pl.edu.pg.eti.marcelbieniek.team.service.TeamService;
 
 import javax.annotation.PostConstruct;
 import java.io.InputStream;

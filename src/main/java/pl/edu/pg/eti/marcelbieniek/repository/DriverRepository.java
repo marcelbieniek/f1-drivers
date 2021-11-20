@@ -3,7 +3,7 @@ package pl.edu.pg.eti.marcelbieniek.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 
 import java.util.List;
 import java.util.Optional;

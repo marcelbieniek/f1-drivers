@@ -1,9 +1,8 @@
 package pl.edu.pg.eti.marcelbieniek.dto;
 
 import lombok.*;
-import org.springframework.data.repository.cdi.Eager;
 import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
