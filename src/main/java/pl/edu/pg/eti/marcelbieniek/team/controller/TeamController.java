@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import pl.edu.pg.eti.marcelbieniek.dto.*;
 import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 import pl.edu.pg.eti.marcelbieniek.team.service.TeamService;
 import pl.edu.pg.eti.marcelbieniek.team.dto.CreateTeamRequest;
@@ -25,21 +24,21 @@ public class TeamController {
         this.teamService = teamService;
     }
 
-    @GetMapping
-    public ResponseEntity<GetTeamsResponse> getTeams() {
-        List<Team> all = teamService.findAll();
-        Function<Collection<Team>, GetTeamsResponse> mapper = GetTeamsResponse.entityToDtoMapper();
-        GetTeamsResponse response = mapper.apply(all);
-
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("{name}")
-    public ResponseEntity<GetTeamResponse> getTeam(@PathVariable("name") String name) {
-        return teamService.find(name)
-                .map(value -> ResponseEntity.ok(GetTeamResponse.entityToDtoMapper().apply(value)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
-    }
+//    @GetMapping
+//    public ResponseEntity<GetTeamsResponse> getTeams() {
+//        List<Team> all = teamService.findAll();
+//        Function<Collection<Team>, GetTeamsResponse> mapper = GetTeamsResponse.entityToDtoMapper();
+//        GetTeamsResponse response = mapper.apply(all);
+//
+//        return ResponseEntity.ok(response);
+//    }
+//
+//    @GetMapping("{name}")
+//    public ResponseEntity<GetTeamResponse> getTeam(@PathVariable("name") String name) {
+//        return teamService.find(name)
+//                .map(value -> ResponseEntity.ok(GetTeamResponse.entityToDtoMapper().apply(value)))
+//                .orElseGet(() -> ResponseEntity.notFound().build());
+//    }
 
     @PostMapping
     public ResponseEntity<Void> createTeam(@RequestBody CreateTeamRequest request, UriComponentsBuilder builder) {
@@ -47,32 +46,32 @@ public class TeamController {
                 .dtoToEntityMapper()
                 .apply(request);
 
-        team = teamService.create(team);
+        teamService.create(team);
 
         return ResponseEntity.created(builder.pathSegment("api", "teams", "{name}")
                 .buildAndExpand(team.getName()).toUri()).build();
     }
 
-    @PutMapping("{name}")
-    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
-        Optional<Team> team = teamService.find(name);
-
-        if(team.isPresent()) {
-            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
-            teamService.update(team.get());
-            return ResponseEntity.accepted().build();
-        }
-        else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    @PutMapping("{name}")
+//    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
+//        Optional<Team> team = teamService.find(name);
+//
+//        if(team.isPresent()) {
+//            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
+//            teamService.update(team.get());
+//            return ResponseEntity.accepted().build();
+//        }
+//        else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
     @DeleteMapping("{name}")
     public ResponseEntity<Void> deleteTeam(@PathVariable("name") String name) {
         Optional<Team> team = teamService.find(name);
 
         if(team.isPresent()) {
-            teamService.delete(team.get().getName());
+            teamService.delete(team.get());
             return ResponseEntity.accepted().build();
         }
         else {

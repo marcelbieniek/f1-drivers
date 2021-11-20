@@ -20,8 +20,6 @@ public class Team implements Serializable {
 
     @Id
     private String name;
-    private int wins;
-    private int championships;
 
     @OneToMany(mappedBy = "team", cascade = CascadeType.REMOVE)
     @ToString.Exclude

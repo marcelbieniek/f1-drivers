@@ -23,22 +23,22 @@ public class TeamService {
         return repository.findById(name);
     }
 
-    public List<Team> findAll() {
-        return repository.findAll();
-    }
+//    public List<Team> findAll() {
+//        return repository.findAll();
+//    }
 
     @Transactional
-    public Team create(Team team) {
-        return repository.save(team);
-    }
-
-    @Transactional
-    public void update(Team team) {
+    public void create(Team team) {
         repository.save(team);
     }
 
+//    @Transactional
+//    public void update(Team team) {
+//        repository.save(team);
+//    }
+
     @Transactional
-    public void delete(String team) {
-        repository.deleteById(team);
+    public void delete(Team team) {
+        repository.delete(team);
     }
 }
