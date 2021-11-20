@@ -14,17 +14,17 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/api/drivers/5
-Content-Type: application/json
-
-{
-  "name": "Carlos Sainz",
-  "wins": 1,
-  "championships": 0
-}
+#PUT http://localhost:8080/api/drivers/5
+#Content-Type: application/json
+#
+#{
+#  "name": "Carlos Sainz",
+#  "wins": 1,
+#  "championships": 0
+#}
 ###
 
-DELETE http://localhost:8080/api/drivers/5
+#DELETE http://localhost:8080/api/drivers/5
 ###
 
 
@@ -47,13 +47,13 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/api/teams/alpine
-Content-Type: application/json
-
-{
-  "wins": 156,
-  "championships": 3
-}
+#PUT http://localhost:8080/api/teams/alpine
+#Content-Type: application/json
+#
+#{
+#  "wins": 156,
+#  "championships": 3
+#}
 ###
 
 DELETE http://localhost:8080/api/teams/alpine
@@ -79,15 +79,15 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/api/teams/alpine/drivers/5
-Content-Type: application/json
-
-{
-  "name": "Carlos Sainz",
-  "wins": 1,
-  "championships": 0
-}
+#PUT http://localhost:8080/api/teams/alpine/drivers/5
+#Content-Type: application/json
+#
+#{
+#  "name": "Carlos Sainz",
+#  "wins": 1,
+#  "championships": 0
+#}
 ###
 
-DELETE http://localhost:8080/api/teams/alpine/drivers/5
+#DELETE http://localhost:8080/api/teams/alpine/drivers/5
 ###
