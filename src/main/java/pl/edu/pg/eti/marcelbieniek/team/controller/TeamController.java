@@ -43,38 +43,39 @@ public class TeamController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("")
     public ResponseEntity<Void> createTeam(@RequestBody CreateTeamRequest request, UriComponentsBuilder builder) {
         Team team = CreateTeamRequest
                 .dtoToEntityMapper()
                 .apply(request);
 
-        team = teamService.create(team);
+        teamService.create(team);
 
         return ResponseEntity.created(builder.pathSegment("api", "teams", "{name}")
-                .buildAndExpand(team.getName()).toUri()).build();
+                .buildAndExpand(team.getName()).toUri())
+                .build();
     }
 
-    @PutMapping("{name}")
-    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
-        Optional<Team> team = teamService.find(name);
-
-        if(team.isPresent()) {
-            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
-            teamService.update(team.get());
-            return ResponseEntity.accepted().build();
-        }
-        else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    @PutMapping("{name}")
+//    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
+//        Optional<Team> team = teamService.find(name);
+//
+//        if(team.isPresent()) {
+//            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
+//            teamService.update(team.get());
+//            return ResponseEntity.accepted().build();
+//        }
+//        else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
     @DeleteMapping("{name}")
     public ResponseEntity<Void> deleteTeam(@PathVariable("name") String name) {
         Optional<Team> team = teamService.find(name);
 
         if(team.isPresent()) {
-            teamService.delete(team.get().getName());
+            teamService.delete(team.get());
             return ResponseEntity.accepted().build();
         }
         else {

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.team.event.repository.TeamEventRepository;
 import pl.edu.pg.eti.marcelbieniek.team.repository.TeamRepository;
 
 import java.util.List;
@@ -13,10 +14,12 @@ import java.util.Optional;
 public class TeamService {
 
     private TeamRepository repository;
+    private TeamEventRepository eventRepository;
 
     @Autowired
-    public TeamService(TeamRepository repository) {
+    public TeamService(TeamRepository repository, TeamEventRepository eventRepository) {
         this.repository = repository;
+        this.eventRepository = eventRepository;
     }
 
     public Optional<Team> find(String name) {
@@ -28,8 +31,9 @@ public class TeamService {
     }
 
     @Transactional
-    public Team create(Team team) {
-        return repository.save(team);
+    public void create(Team team) {
+        repository.save(team);
+        eventRepository.create(team);
     }
 
     @Transactional
@@ -38,7 +42,8 @@ public class TeamService {
     }
 
     @Transactional
-    public void delete(String team) {
-        repository.deleteById(team);
+    public void delete(Team team) {
+        eventRepository.delete(team);
+        repository.delete(team);
     }
 }
