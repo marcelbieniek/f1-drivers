@@ -1,10 +1,10 @@
-GET http://localhost:8080/api/drivers
+GET http://localhost:8082/api/drivers
 ###
 
-GET http://localhost:8080/api/drivers/5
+GET http://localhost:8082/api/drivers/5
 ###
 
-POST http://localhost:8080/api/drivers
+POST http://localhost:8082/api/drivers
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/api/drivers/5
+PUT http://localhost:8082/api/drivers/5
 Content-Type: application/json
 
 {
@@ -24,52 +24,22 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:8080/api/drivers/5
+DELETE http://localhost:8082/api/drivers/5
 ###
 
 
 
 
 
-GET http://localhost:8080/api/teams
+
+
+GET http://localhost:8082/api/teams/scuderia_ferrari/drivers
 ###
 
-GET http://localhost:8080/api/teams/alpine
+GET http://localhost:8082/api/teams/scuderia_ferrari/drivers/5
 ###
 
-POST http://localhost:8080/api/teams
-Content-Type: application/json
-
-{
-  "name": "alpine",
-  "wins": 145,
-  "championships": 2
-}
-###
-
-PUT http://localhost:8080/api/teams/alpine
-Content-Type: application/json
-
-{
-  "wins": 156,
-  "championships": 3
-}
-###
-
-DELETE http://localhost:8080/api/teams/alpine
-###
-
-
-
-
-
-GET http://localhost:8080/api/teams/alpine/drivers
-###
-
-GET http://localhost:8080/api/teams/alpine/drivers/5
-###
-
-POST http://localhost:8080/api/teams/alpine/drivers
+POST http://localhost:8082/api/teams/scuderia_ferrari/drivers
 Content-Type: application/json
 
 {
@@ -79,15 +49,15 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:8080/api/teams/alpine/drivers/5
-Content-Type: application/json
-
-{
-  "name": "Carlos Sainz",
-  "wins": 1,
-  "championships": 0
-}
+#PUT http://localhost:8081/api/teams/scuderia_ferrari/drivers/5
+#Content-Type: application/json
+#
+#{
+#  "name": "Carlos Sainz",
+#  "wins": 1,
+#  "championships": 0
+#}
 ###
 
-DELETE http://localhost:8080/api/teams/alpine/drivers/5
+DELETE http://localhost:8082/api/teams/scuderia_ferrari
 ###
