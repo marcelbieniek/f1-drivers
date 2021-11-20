@@ -1,10 +1,8 @@
-package pl.edu.pg.eti.marcelbieniek.repository;
+package pl.edu.pg.eti.marcelbieniek.team.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
-
-import java.util.Optional;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team, String> {

@@ -1,12 +1,12 @@
-package pl.edu.pg.eti.marcelbieniek.service;
+package pl.edu.pg.eti.marcelbieniek.driver.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
-import pl.edu.pg.eti.marcelbieniek.repository.DriverRepository;
-import pl.edu.pg.eti.marcelbieniek.repository.TeamRepository;
+import pl.edu.pg.eti.marcelbieniek.driver.entity.Driver;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.driver.repository.DriverRepository;
+import pl.edu.pg.eti.marcelbieniek.team.repository.TeamRepository;
 
 import java.util.List;
 import java.util.Optional;

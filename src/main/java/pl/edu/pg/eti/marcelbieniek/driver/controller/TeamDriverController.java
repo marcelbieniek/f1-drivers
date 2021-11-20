@@ -1,17 +1,17 @@
-package pl.edu.pg.eti.marcelbieniek.controllers;
+package pl.edu.pg.eti.marcelbieniek.driver.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import pl.edu.pg.eti.marcelbieniek.dto.CreateDriverRequest;
-import pl.edu.pg.eti.marcelbieniek.dto.GetDriverResponse;
-import pl.edu.pg.eti.marcelbieniek.dto.GetDriversResponse;
-import pl.edu.pg.eti.marcelbieniek.dto.UpdateDriverRequest;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
-import pl.edu.pg.eti.marcelbieniek.service.DriverService;
-import pl.edu.pg.eti.marcelbieniek.service.TeamService;
+import pl.edu.pg.eti.marcelbieniek.driver.dto.CreateDriverRequest;
+import pl.edu.pg.eti.marcelbieniek.driver.dto.GetDriverResponse;
+import pl.edu.pg.eti.marcelbieniek.driver.dto.GetDriversResponse;
+import pl.edu.pg.eti.marcelbieniek.driver.dto.UpdateDriverRequest;
+import pl.edu.pg.eti.marcelbieniek.driver.entity.Driver;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.driver.service.DriverService;
+import pl.edu.pg.eti.marcelbieniek.team.service.TeamService;
 
 import java.util.Optional;
 

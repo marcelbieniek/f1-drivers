@@ -1,7 +1,6 @@
-package pl.edu.pg.eti.marcelbieniek.dto;
+package pl.edu.pg.eti.marcelbieniek.driver.dto;
 
 import lombok.*;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
 
 import java.util.Collection;
 import java.util.List;
@@ -33,7 +32,7 @@ public class GetDriversResponse {
     @Singular
     private List<Driver> drivers;
 
-    public static Function<Collection<pl.edu.pg.eti.marcelbieniek.entity.Driver>, GetDriversResponse> entityToDtoMapper() {
+    public static Function<Collection<pl.edu.pg.eti.marcelbieniek.driver.entity.Driver>, GetDriversResponse> entityToDtoMapper() {
         return drivers -> {
             GetDriversResponseBuilder response = GetDriversResponse.builder();
 

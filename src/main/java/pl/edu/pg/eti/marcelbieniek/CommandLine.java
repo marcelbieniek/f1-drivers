@@ -3,10 +3,10 @@ package pl.edu.pg.eti.marcelbieniek;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
-import pl.edu.pg.eti.marcelbieniek.entity.Team;
-import pl.edu.pg.eti.marcelbieniek.service.DriverService;
-import pl.edu.pg.eti.marcelbieniek.service.TeamService;
+import pl.edu.pg.eti.marcelbieniek.driver.entity.Driver;
+import pl.edu.pg.eti.marcelbieniek.team.entity.Team;
+import pl.edu.pg.eti.marcelbieniek.driver.service.DriverService;
+import pl.edu.pg.eti.marcelbieniek.team.service.TeamService;
 
 import java.util.Scanner;
 
@@ -97,7 +97,7 @@ public class CommandLine implements CommandLineRunner {
         String name = scanner.nextLine();
 
         boolean available = false;
-        String team = "";
+        String team;
 
         while(!available) {
             System.out.print("team: ");

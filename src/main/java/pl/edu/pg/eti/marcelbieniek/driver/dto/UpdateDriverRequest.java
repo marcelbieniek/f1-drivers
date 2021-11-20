@@ -1,7 +1,7 @@
-package pl.edu.pg.eti.marcelbieniek.dto;
+package pl.edu.pg.eti.marcelbieniek.driver.dto;
 
 import lombok.*;
-import pl.edu.pg.eti.marcelbieniek.entity.Driver;
+import pl.edu.pg.eti.marcelbieniek.driver.entity.Driver;
 
 import java.util.function.BiFunction;
 

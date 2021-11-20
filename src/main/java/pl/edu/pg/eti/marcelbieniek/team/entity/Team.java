@@ -1,6 +1,7 @@
-package pl.edu.pg.eti.marcelbieniek.entity;
+package pl.edu.pg.eti.marcelbieniek.team.entity;
 
 import lombok.*;
+import pl.edu.pg.eti.marcelbieniek.driver.entity.Driver;
 
 import javax.persistence.*;
 import java.io.Serializable;
