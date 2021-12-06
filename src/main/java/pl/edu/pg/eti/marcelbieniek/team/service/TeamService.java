@@ -36,10 +36,10 @@ public class TeamService {
         eventRepository.create(team);
     }
 
-//    @Transactional
-//    public void update(Team team) {
-//        repository.save(team);
-//    }
+    @Transactional
+    public void update(Team team) {
+        repository.save(team);
+    }
 
     @Transactional
     public void delete(Team team) {

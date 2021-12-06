@@ -56,19 +56,19 @@ public class TeamController {
                 .build();
     }
 
-//    @PutMapping("{name}")
-//    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
-//        Optional<Team> team = teamService.find(name);
-//
-//        if(team.isPresent()) {
-//            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
-//            teamService.update(team.get());
-//            return ResponseEntity.accepted().build();
-//        }
-//        else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
+    @PutMapping("{name}")
+    public ResponseEntity<Void> updateTeam(@RequestBody UpdateTeamRequest request, @PathVariable("name") String name) {
+        Optional<Team> team = teamService.find(name);
+
+        if(team.isPresent()) {
+            UpdateTeamRequest.dtoToEntityUpdater().apply(team.get(), request);
+            teamService.update(team.get());
+            return ResponseEntity.accepted().build();
+        }
+        else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @DeleteMapping("{name}")
     public ResponseEntity<Void> deleteTeam(@PathVariable("name") String name) {

@@ -1,7 +1,7 @@
 GET http://localhost:8081/api/teams
 ###
 
-GET http://localhost:8081/api/teams/alpine
+GET http://localhost:8081/api/teams/mclaren_f1
 ###
 
 POST http://localhost:8081/api/teams
@@ -14,13 +14,13 @@ Content-Type: application/json
 }
 ###
 
-#PUT http://localhost:8081/api/teams/alpine
-#Content-Type: application/json
-#
-#{
-#  "wins": 156,
-#  "championships": 3
-#}
+PUT http://localhost:8081/api/teams/mclaren_f1
+Content-Type: application/json
+
+{
+  "wins": 156,
+  "championships": 3
+}
 ###
 
 DELETE http://localhost:8081/api/teams/alpine

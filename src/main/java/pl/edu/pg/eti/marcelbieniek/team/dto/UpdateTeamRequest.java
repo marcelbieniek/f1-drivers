@@ -18,12 +18,12 @@ public class UpdateTeamRequest {
     private int wins;
     private int championships;
 
-//    public static BiFunction<Team, UpdateTeamRequest, Team> dtoToEntityUpdater() {
-//        return (team, request) -> {
-//            //team.setName(request.getName());
-//            team.setWins(request.getWins());
-//            team.setChampionships(request.getChampionships());
-//            return team;
-//        };
-//    }
+    public static BiFunction<Team, UpdateTeamRequest, Team> dtoToEntityUpdater() {
+        return (team, request) -> {
+            //team.setName(request.getName());
+            team.setWins(request.getWins());
+            team.setChampionships(request.getChampionships());
+            return team;
+        };
+    }
 }
